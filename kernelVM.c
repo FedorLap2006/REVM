@@ -1,41 +1,70 @@
 #include <stdio.h>
 #include <inttypes.h>
 
-/*
-  MEMORY
-  65536 locations which stores a 16-bit value.
-  This means it can store a total of only 128kb.
-*/
-uint16_t memory[UINT16_MAX];
+#include "hardwareLC3.h"
 
-/*
-  REGISTERS
-  8 general purpose registers (R0-R7)
-  1 program counter (PC) register
-  1 condition flags (COND) register
-*/
+int main(int argc, const char *argv[])
+{
+  /* Set the PC to starting position */
+  enum {
+    PC_START = 0x3000
+  };
+  reg[R_PC] = PC_START;
 
-enum {
-  R_R0 = 0,
-  R_R1,
-  R_R2,
-  R_R3,
-  R_R4,
-  R_R5,
-  R_R6,
-  R_R7,
-  R_PC,
-  R_COND,
-  R_COUNT
-};
+  int vmRunning = 1;
+  while(vmRunning)
+  {
+    uint16_t instr = mem_read(reg[R_PC]);
+    uint16_t op = instr >> 12;
 
-uint16_t reg[R_COUNT];
+    ++reg[R_PC];
+    switch (op) {
+      case OP_ADD:
 
-/*
-  INSTRUCTIONS SET
-*/
+        break;
+      case OP_AND:
 
-int main() {
+        break;
+      case OP_NOT:
+
+        break;
+      case OP_BR:
+
+        break;
+      case OP_JMP:
+
+        break;
+      case OP_JSR:
+
+        break;
+      case OP_LD:
+
+        break;
+      case OP_LDI:
+
+        break;
+      case OP_LDR:
+
+        break;
+      case OP_ST:
+
+        break;
+      case OP_STI:
+
+        break;
+      case OP_STR:
+
+        break;
+      case OP_TRAP:
+
+        break;
+      case OP_RES:
+      case OP_RTI:
+      default:
+        
+        break;
+    }
+  }
 
   return 0;
 }
