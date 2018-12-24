@@ -1,7 +1,7 @@
-#include <stdio.h>
-#include <inttypes.h>
+#include <cstdio>
+#include <cinttypes>
 
-#include "hardwareLC3.h"
+#include "hardwareLC3.hpp"
 
 int main(int argc, const char *argv[])
 {
@@ -61,7 +61,7 @@ int main(int argc, const char *argv[])
       case OP_RES:
       case OP_RTI:
       default:
-        
+
         break;
     }
   }

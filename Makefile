@@ -1,9 +1,10 @@
+CC=g++
 all: kernelVM
 kernelVM: kernelVM.o
-	gcc -Wall kernelVM.o -o kernelVM.vexe
+	$(CC) -Wall kernelVM.o -o kernelVM.vexe
 
 kernelVM.o: kernelVM.c
-	gcc -c -Wall kernelVM.c -o kernelVM.o
+	$(CC) -c -Wall kernelVM.c -o kernelVM.o
 
 run:
 	./kernelVM.vexe
