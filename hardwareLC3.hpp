@@ -57,7 +57,16 @@ private:
     OP_LEA,     // LOAD EFFECTIVE ADDRESS - compute address, save in register
     OP_TRAP     // EXECUTE TRAP - call a service routine
   };
+
+private:
+  char *fileName;
 public:
     int main_vmlc3();
+
+    VMlc3(int argc, char *argv[])
+    {
+      fileName = argv[argc-1];
+    }
+
 };
 #endif
