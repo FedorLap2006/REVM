@@ -1,6 +1,9 @@
 #ifndef _HARDWARE_LC3_
 #define _HARDWARE_LC3_
 
+#include <iostream>
+#include <string>
+
 class VMlc3{
 private:
   /*
@@ -59,13 +62,16 @@ private:
   };
 
 private:
-  char *fileName;
+  std::string fileToProc;
+
+  uint16_t sign_extend(uint16_t x, int bit_count);
+
 public:
     int main_vmlc3();
 
     VMlc3(int argc, char *argv[])
     {
-      fileName = argv[argc-1];
+      fileToProc = argv[argc-1];
     }
 
 };
