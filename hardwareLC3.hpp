@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <cstdlib>
 
 class VMlc3{
 private:
@@ -64,7 +65,9 @@ private:
 private:
   std::string fileToProc;
 
+  uint16_t mem_read(uint16_t address);
   uint16_t sign_extend(uint16_t x, int bit_count);
+  void update_flag(uint16_t r);
 
 public:
     int main_vmlc3();
